@@ -33,7 +33,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {e
   debugger;
   return { items: state.items }
 }
