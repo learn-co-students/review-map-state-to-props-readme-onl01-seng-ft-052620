@@ -6,19 +6,21 @@ import './App.css';
 class App extends Component {
 
   handleOnClickItems() {
-    this.props.store.dispatch({
+    // console.log(this.props.store);
+    // console.log(this.props);
+    this.props.dispatch({
       type: 'GET_COUNT_OF_ITEMS',
     });
   }
 
   handleOnClickUsers() {
-    this.props.store.dispatch({
+    this.props.dispatch({
       type: 'GET_COUNT_OF_USERS',
     });
   }
 
   render() {
-    // debugger;
+    debugger;
     return (
       <div className="App">
           <button onClick={() => this.handleOnClickItems()}>
@@ -27,6 +29,7 @@ class App extends Component {
           <button onClick={() => this.handleOnClickUsers()}>
             Click to change user count
           </button>
+          {/* <p>{this.props.items.length}</p> */}
           <p>{this.props.items.length}</p>
       </div>
     );
@@ -37,5 +40,9 @@ const mapStateToProps = (state) => {
   debugger;
   return { items: state.items }
 }
-
+// const vanilla = (milkshake) => {
+//   debugger;
+//   return { items: milkshake.items }
+// }
+// export default connect(vanilla)(App);
 export default connect(mapStateToProps)(App);
